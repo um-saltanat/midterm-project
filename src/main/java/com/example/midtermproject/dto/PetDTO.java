@@ -1,18 +1,16 @@
-package com.example.midtermproject.entities;
+package com.example.midtermproject.dto;
 
-import jakarta.persistence.*;
+import com.example.midtermproject.entities.RescueOrg;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.*;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
 @Builder
-@Getter
-@Setter
-@Entity
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Table(name = "pets")
-public class Pet {
+@AllArgsConstructor
+@NoArgsConstructor
+public class PetDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,9 +22,5 @@ public class Pet {
     private Integer age;
     private String gender;
 
-    @ManyToOne
-    @JoinColumn(name = "rescue_org_id", referencedColumnName = "id")
     private RescueOrg rescueOrg;
-
-
 }
