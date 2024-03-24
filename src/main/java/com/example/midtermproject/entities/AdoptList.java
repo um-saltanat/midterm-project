@@ -14,7 +14,7 @@ import lombok.*;
 @Table(name = "adopt_list")
 public class AdoptList {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
