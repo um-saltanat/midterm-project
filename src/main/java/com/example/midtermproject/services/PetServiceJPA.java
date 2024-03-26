@@ -29,11 +29,13 @@ public class PetServiceJPA implements PetService{
     }
 
     @Override
-    public PetDTO savePet(PetDTO pet) {
-        return petMapper
-                .petToPetDTO(
-                        petRepository.save(petMapper.petDTOtoPet(pet))
-                );
+    public PetDTO savePet(PetDTO petDTO) {
+
+        Pet pet = petMapper.petDTOtoPet(petDTO);
+
+        Pet savedPet = petRepository.save(pet);
+
+        return petMapper.petToPetDTO(savedPet);
     }
 
     @Override
@@ -69,6 +71,5 @@ public class PetServiceJPA implements PetService{
             throw new NotFoundException("Pet not found with id: " + id);
         }
     }
-
 
 }
