@@ -32,9 +32,7 @@ public class PetServiceJPA implements PetService{
     public PetDTO savePet(PetDTO petDTO) {
 
         Pet pet = petMapper.petDTOtoPet(petDTO);
-
         Pet savedPet = petRepository.save(pet);
-
         return petMapper.petToPetDTO(savedPet);
     }
 
