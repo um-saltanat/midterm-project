@@ -21,6 +21,6 @@ The Pet Adoption Website is a web application designed to facilitate pet adoptio
 4. Build and run the application
 5. Access the application in your web browser at http://localhost:8080.
 
-###Testing
+- Testing
 You can run the unit tests using Maven
 For integration testing, you can use tools like Postman to test the RESTful endpoints.
