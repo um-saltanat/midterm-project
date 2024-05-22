@@ -18,6 +18,7 @@ public class PetServiceJPA implements PetService{
     private final PetRepository petRepository;
     private final PetMapper petMapper;
 
+    public  PetDTO convertEntityToDTO(Pet pet) { return petMapper.petToPetDTO(pet);}
     @Override
     public Optional<PetDTO> getPetByID(Long id) {
         return Optional.ofNullable(
